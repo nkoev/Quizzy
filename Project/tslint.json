@@ -28,7 +28,8 @@
         "no-unsafe-any": false,
         "no-unnecessary-type-assertion": false,
         "trailing-comma": true,
-        "export-name": false
+        "export-name": false,
+        "no-parameter-properties": false
     },
     "rulesDirectory": []
 }
