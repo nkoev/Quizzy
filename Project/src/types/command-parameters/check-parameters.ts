@@ -1,4 +1,3 @@
 export type CheckParameters = {
-answer: string;
-more: string;
+answers?: boolean;
 }; /* Replace with your joined command parameters */
