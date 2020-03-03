@@ -18,6 +18,10 @@ export class ArgumentsParser implements IArgumentsParser {
     if (args.answers) {
       this._arguments.answers = true;
     }
+
+    if (args.wiki) {
+      this._arguments.wiki = args.wiki;
+    }
   }
 
   // tslint:disable-next-line: no-banned-terms

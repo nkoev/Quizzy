@@ -22,7 +22,7 @@ export class QuizCommand implements ICommand {
       this.artFormatter.format('Quizz!', ColorType.Yellow),
     );
 
-    const answers: any =
+    const answers: {[key: string]: {}} =
     await inquirer.prompt(
       this.buildQuiz()
     );

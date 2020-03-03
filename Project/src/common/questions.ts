@@ -1,11 +1,11 @@
 
-export const questions: any = {
+export const questions:  {[key: string]: string[]} = {
   'Constructors are used to:':
   [
     'Create a sub class',
     'Free memory',
     'Build a user interface',
-    'Initialize new object'
+    'Initialize new object',
   ],
   'Which of the following is not a part of OOP?':
   [

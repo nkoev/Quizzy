@@ -1,3 +1,6 @@
+import { WikiKeys } from "../../common/wiki-keys";
+
 export type CheckParameters = {
 answers?: boolean;
-}; /* Replace with your joined command parameters */
+wiki?: keyof typeof WikiKeys;
+};

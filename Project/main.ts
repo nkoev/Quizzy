@@ -4,8 +4,8 @@ import 'reflect-metadata';
 
 import { CLI } from './src/cli';
 
-async function bootstrap() {
-  const app = new CLI();
+async function bootstrap(): Promise<any> {
+  const app: CLI = new CLI();
 
   await app.main();
 }
