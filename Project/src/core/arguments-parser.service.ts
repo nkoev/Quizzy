@@ -13,11 +13,11 @@ export class ArgumentsParser implements IArgumentsParser {
 
   constructor(
     private readonly printer: ConsolePrinter,
-    private readonly commandss: CommandContainer
+    private readonly commandContainer: CommandContainer
   ) {
 
     const args: minimist.ParsedArgs = minimist(process.argv.slice(2));
-    const commands: string[] = Object.keys(commandss);
+    const commands: string[] = Object.keys(this.commandContainer);
 
     if (!commands.includes(args._[0])) {
       this.printer.print('Unknown command. Available commands are: play, check, help');
