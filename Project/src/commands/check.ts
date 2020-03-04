@@ -18,7 +18,7 @@ export class CheckCommand implements ICommand {
   public async execute({ answers = false, wiki }: CheckParameters): Promise<ExecutionResult> {
 
     this.printer.print(
-      this.formatter.format('Quizz!', ColorType.Yellow)
+      this.formatter.format('Quizzy!', ColorType.Yellow)
     );
     if (wiki) {
       const printable: string = await this.dataService.getWikiData(WikiKeywords[wiki]);

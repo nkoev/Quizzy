@@ -16,7 +16,7 @@ export class HelpCommand implements ICommand {
 
       quizzy help                 prints this manual
 
-      quizzy play                 Starts a new quiz of five consecutive questions.
+      quizzy play                 Starts a new quiz of consecutive questions.
                                   Currently only OOP quiz is available and no need to pass any arguments.
 
       quizzy check                Shows additional information depending on the arguments passed.

@@ -19,7 +19,7 @@ export class PlayCommand implements ICommand {
   public async execute(): Promise<ExecutionResult> {
 
     this.printer.print(
-      this.artFormatter.format('Quizz!', ColorType.Yellow),
+      this.artFormatter.format('Quizzy!', ColorType.Yellow),
     );
 
     const answers: { [key: string]: {} } =
