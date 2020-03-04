@@ -6,32 +6,42 @@ import { ArtFormatter } from '../core/art-formatter';
 import { ConsolePrinter } from '../core/console-printer.service';
 import { FormatterService } from '../core/formatter.service';
 import { QuestionGenerator } from '../core/question-generator.service';
+import { Injectable } from '../tools/decorators/injectable';
 import { ICommand } from '../types/command';
 import { IQuestionGenerator } from '../types/core/question-generator';
 import { ExecutionResult } from '../types/execution-result';
 
+@Injectable()
 export class PlayCommand implements ICommand {
 
-  private readonly printer: ConsolePrinter = new ConsolePrinter();
-  private readonly formatter: FormatterService = new FormatterService();
-  private readonly artFormatter: ArtFormatter = new ArtFormatter();
+  public constructor(
+    private readonly printer: ConsolePrinter,
+    private readonly formatter: FormatterService,
+    private readonly artFormatter: ArtFormatter
+  ) { }
 
   public async execute(): Promise<ExecutionResult> {
-
-    this.printer.print(
-      this.artFormatter.format('Quizzy!', ColorType.Yellow),
-    );
-
-    const answers: { [key: string]: {} } =
-      await inquirer.prompt(
-        this.buildQuiz()
+    try {
+      this.printer.print(
+        this.artFormatter.format('Quizzy!', ColorType.Yellow),
       );
 
-    this.printer.print(
-      this.checkResult(answers)
-    );
+      const answers: { [key: string]: {} } =
+        await inquirer.prompt(
+          this.buildQuiz()
+        );
 
-    return { errors: 0, message: undefined };
+      this.printer.print(
+        this.checkResult(answers)
+      );
+
+      return { errors: 0, message: undefined };
+    } catch (err) {
+      return {
+        errors: 1,
+        message: this.formatter.format(err.message, ColorType.Red)
+      };
+    }
   }
 
   private buildQuiz(): IQuestionGenerator[] {

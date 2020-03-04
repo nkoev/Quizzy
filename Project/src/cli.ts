@@ -3,13 +3,15 @@ import { ArgumentsParser } from './core/arguments-parser.service';
 import { ConsolePrinter } from './core/console-printer.service';
 import { ICommand } from './types/command';
 import { CommandParameters } from './types/command-parameters/command-parameters';
+import { Injectable } from './tools/decorators/injectable';
 
+@Injectable()
 export class CLI {
 
   constructor(
-    private readonly parser: ArgumentsParser = new ArgumentsParser(),
-    private readonly printer: ConsolePrinter = new ConsolePrinter(),
-    private readonly commandContainer: CommandContainer = new CommandContainer(),
+    private readonly parser: ArgumentsParser,
+    private readonly printer: ConsolePrinter,
+    private readonly commandContainer: CommandContainer,
   ) { }
   public async main() {
     const command = this.parser.command as keyof CommandContainer;

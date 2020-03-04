@@ -1,10 +1,14 @@
+import { Injectable } from '../tools/decorators/injectable';
 import { ExecutionResult } from '../types/execution-result';
 import { ConsolePrinter } from './../core/console-printer.service';
 import { ICommand } from './../types/command';
 
+@Injectable()
 export class HelpCommand implements ICommand {
 
-  private readonly printer: ConsolePrinter = new ConsolePrinter();
+  public constructor(
+    private readonly printer: ConsolePrinter
+  ) { }
 
   public async execute(): Promise<ExecutionResult> {
     this.printer.print(
