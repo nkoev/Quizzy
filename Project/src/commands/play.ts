@@ -26,7 +26,7 @@ export class PlayCommand implements ICommand {
         this.artFormatter.format('Quizzy!', ColorType.Yellow),
       );
 
-      const answers: { [key: string]: {} } =
+      const answers: { [key: string]: string } =
         await inquirer.prompt(
           this.buildQuiz()
         );
@@ -49,10 +49,10 @@ export class PlayCommand implements ICommand {
       .map((key: string): IQuestionGenerator => new QuestionGenerator(key, questions[key]));
   }
 
-  private checkResult(answers: any): string {
+  private checkResult(answers: { [key: string]: string }): string {
     let wrong: number = 0;
     Object.values(answers)
-      .forEach((answer: any, index: number): void => {
+      .forEach((answer: string, index: number): void => {
         if (answer !== correctAnswers[index]) {
           wrong += 1;
         }
