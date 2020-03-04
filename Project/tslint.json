@@ -7,19 +7,37 @@
     "jsRules": {},
     "rules": {
         "jsdoc-require": false,
-        "quotemark": [true, "single"],
+        "quotemark": [
+            true,
+            "single"
+        ],
         "interface-name": true,
         "no-implicit-dependencies": false,
         "no-submodule-imports": false,
         "missing-jsdoc": false,
         "no-console": false,
         "no-relative-imports": false,
-        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-leading-underscore"
+        ],
         "arrow-parens": true,
         "adjacent-overload-signatures": true,
-        "arrow-return-shorthand": [true, "multiline"],
-        "comment-format": [true, "check-space", "check-uppercase"],
-        "indent": [true, "spaces"],
+        "arrow-return-shorthand": [
+            true,
+            "multiline"
+        ],
+        "comment-format": [
+            true,
+            "check-space",
+            "check-uppercase"
+        ],
+        "indent": [
+            true,
+            "spaces"
+        ],
         "no-consecutive-blank-lines": true,
         "no-parameter-reassignment": false,
         "align": false,
@@ -29,7 +47,8 @@
         "no-unnecessary-type-assertion": false,
         "trailing-comma": true,
         "export-name": false,
-        "no-parameter-properties": false
+        "no-parameter-properties": false,
+        "strict-boolean-expressions": false
     },
     "rulesDirectory": []
 }

@@ -10,4 +10,4 @@ async function bootstrap(): Promise<any> {
   await app.main();
 }
 
-bootstrap();
+bootstrap()

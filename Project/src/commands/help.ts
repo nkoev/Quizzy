@@ -9,7 +9,24 @@ export class HelpCommand implements ICommand {
   public async execute(): Promise<ExecutionResult> {
     this.printer.print(
       `
-      Your cli documentation here...
+      Usage: quizzy <command>
+
+      where <command> is one of:
+        play, check, help
+
+      quizzy help                 prints this manual
+
+      quizzy play                 Starts a new quiz of five consecutive questions.
+                                  Currently only OOP quiz is available and no need to pass any arguments.
+
+      quizzy check                Shows additional information depending on the arguments passed.
+        arguments:
+          --answers               Shows correct answers
+          --wiki=<string>         Shows Wikipedia extract on one of the OOP principles
+                                  (inheritance / encapsulation / abstraction / polymorphism)
+
+        example:
+          quizzy check --wiki=inheritance
       `
     );
 

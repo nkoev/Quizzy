@@ -1,13 +1,13 @@
 import { CheckCommand } from './check';
 import { HelpCommand } from './help';
-import { QuizCommand } from './quiz';
+import { PlayCommand } from './play';
 
 export class CommandContainer {
 
-constructor (
-  public readonly help: HelpCommand = new HelpCommand(),
-  public readonly quiz: QuizCommand = new QuizCommand(),
-  public readonly check: CheckCommand = new CheckCommand(),
-) {}
+  constructor(
+    public readonly help: HelpCommand = new HelpCommand(),
+    public readonly play: PlayCommand = new PlayCommand(),
+    public readonly check: CheckCommand = new CheckCommand(),
+  ) { }
 
 }

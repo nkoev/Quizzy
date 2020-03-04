@@ -1,6 +1,6 @@
-import { WikiKeys } from "../../common/wiki-keys";
+import { WikiKeywords } from "../../common/wiki-keywords";
 
 export type CheckParameters = {
-answers?: boolean;
-wiki?: keyof typeof WikiKeys;
+  answers?: boolean;
+  wiki?: keyof typeof WikiKeywords;
 };
