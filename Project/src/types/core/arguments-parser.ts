@@ -1,6 +1,7 @@
 import { CommandParameters } from './../command-parameters/command-parameters';
 
 export interface IArgumentsParser {
-  command: string;
+  // tslint:disable-next-line: no-banned-terms
   arguments: CommandParameters;
+  command: string;
 }

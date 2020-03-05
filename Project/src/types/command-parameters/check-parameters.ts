@@ -1,4 +1,4 @@
-import { WikiKeywords } from "../../common/wiki-keywords";
+import { WikiKeywords } from '../../common/wiki-keywords';
 
 export type CheckParameters = {
   answers?: boolean;

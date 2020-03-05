@@ -6,8 +6,8 @@ export class QuestionGenerator implements IQuestionGenerator {
   public readonly type: string = 'list';
   public readonly message: string = this.name;
 
-  constructor (
+  constructor(
     public readonly name: string,
     public readonly choices: string[],
-  ) {}
+  ) { }
 }

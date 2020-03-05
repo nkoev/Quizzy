@@ -1,9 +1,9 @@
 import { CommandContainer } from './commands/commands-container';
 import { ArgumentsParser } from './core/arguments-parser.service';
 import { ConsolePrinter } from './core/console-printer.service';
+import { Injectable } from './tools/decorators/injectable';
 import { ICommand } from './types/command';
 import { CommandParameters } from './types/command-parameters/command-parameters';
-import { Injectable } from './tools/decorators/injectable';
 
 @Injectable()
 export class CLI {
